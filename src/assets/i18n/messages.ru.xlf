@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="APP_AUTH_SIGN_IN_TITLE" datatype="html">
+        <source>App Auth Sign In</source>
+        <target>Вход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/app-auth-sign-in/container/app-auth-sign-in.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="APP_AUTH_SIGN_UP_TITLE" datatype="html">
+        <source>App Auth Sign Up</source>
+        <target>Регистрация</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/app-auth-sign-up/container/app-auth-sign-up.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="APP_AUTH_RESET_PASSWORD_TITLE" datatype="html">
+        <source>App Auth Reset Password</source>
+        <target>Сброс пароля</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/app-auth-reset-password/container/app-auth-reset-password.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8559170870663360229" datatype="html">
+        <source>Examples</source>
+        <target>Примеры</target>
+      </trans-unit>
+      <trans-unit id="3825802286872185103" datatype="html">
+        <source>Calendar</source>
+        <target>Календарь</target>
+      </trans-unit>
+      <trans-unit id="2078785402028999261" datatype="html">
+        <source>Forms</source>
+        <target>Формы</target>
+      </trans-unit>
+      <trans-unit id="4656232853685757300" datatype="html">
+        <source>Skeleton</source>
+        <target>Шаблоны</target>
+      </trans-unit>
+      <trans-unit id="1067752137700545899" datatype="html">
+        <source>Typography</source>
+        <target>Текста</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

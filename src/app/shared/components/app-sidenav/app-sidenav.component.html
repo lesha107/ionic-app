@@ -1,0 +1,48 @@
+<mat-nav-list>
+  <ng-container
+    *ngFor="let navigationMenuItem of navigationMenu"
+    [ngTemplateOutlet]="getTemplate(navigationMenuItem.type)"
+    [ngTemplateOutletContext]="{ $implicit: navigationMenuItem }"
+  ></ng-container>
+</mat-nav-list>
+
+<ng-template #subheaderTemplate let-navigationMenuItem>
+  <div mat-subheader>{{ navigationMenuItem.name }}</div>
+</ng-template>
+
+<ng-template #dividerTemplate>
+  <mat-divider></mat-divider>
+</ng-template>
+
+<ng-template #groupTemplate let-navigationMenuItem>
+  <mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+    <mat-expansion-panel-header>
+      <ng-template
+        [ngTemplateOutlet]="linkTemplate"
+        [ngTemplateOutletContext]="{ $implicit: navigationMenuItem }"
+      ></ng-template>
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+      <ng-template
+        *ngFor="let child of navigationMenuItem.children"
+        [ngTemplateOutlet]="linkTemplate"
+        [ngTemplateOutletContext]="{ $implicit: child }"
+      ></ng-template>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</ng-template>
+
+<ng-template #linkTemplate let-navigationMenuItem>
+  <a mat-list-item [routerLink]="navigationMenuItem.path">
+    <mat-icon
+      mat-list-icon
+      [matBadgeHidden]="!navigationMenuItem.badge?.value"
+      [matBadge]="navigationMenuItem.badge?.value"
+      [matBadgeOverlap]="navigationMenuItem.badge?.overlap"
+      [matBadgeColor]="navigationMenuItem.badge?.color"
+    >
+      {{ navigationMenuItem.icon }}
+    </mat-icon>
+    <span *ngIf="showFullNav" [@fade]>{{ navigationMenuItem.name }}</span>
+  </a>
+</ng-template>

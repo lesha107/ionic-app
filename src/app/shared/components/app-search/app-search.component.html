@@ -1,0 +1,24 @@
+<div mat-dialog-title>
+  <mat-form-field appearance="outline">
+    <mat-label>Search</mat-label>
+    <input matInput [formControl]="searchControl" placeholder="Enter data" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</div>
+<div mat-dialog-content class="content">
+  <div>
+    History
+    <app-sidenav (click)="onNoClick()" [navigationMenu]="searchedLinks | async"></app-sidenav>
+  </div>
+
+  <div>
+    Pages
+    <app-sidenav (click)="onNoClick()" [navigationMenu]="searchedLinks | async"></app-sidenav>
+  </div>
+
+  <div>
+    Actions
+    <app-sidenav (click)="onNoClick()" [navigationMenu]="searchedLinks | async"></app-sidenav>
+  </div>
+</div>
+<div mat-dialog-actions></div>

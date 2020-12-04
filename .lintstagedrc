@@ -1,0 +1,13 @@
+{
+    "*.{js,json,md,html}": [
+        "prettier --write"
+    ],
+    "*.{css,scss,sass,less,stylus}": [
+        "prettier --write",
+        "npm run lint-css"
+    ],
+    "*.{ts}": [
+        "prettier --write",
+        "npm run lint"
+    ]
+}

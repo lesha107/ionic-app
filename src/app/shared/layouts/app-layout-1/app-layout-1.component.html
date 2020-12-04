@@ -1,0 +1,44 @@
+<app-toolbar (searchClicked)="openSearchDialog()">
+  <ng-container left *ngTemplateOutlet="appToolbarLeft"></ng-container>
+  <ng-container middle *ngTemplateOutlet="appToolbarMiddle"></ng-container>
+  <ng-container right *ngTemplateOutlet="appToolbarRight"></ng-container>
+</app-toolbar>
+
+<mat-sidenav-container autosize>
+  <mat-sidenav #leftSidenav [mode]="leftSidenavMode" [opened]="isLeftSideavOpened$ | async">
+    <app-sidenav [navigationMenu]="navigationMenu"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="sidenav-content">
+      <div class="search" *ngIf="showSearchFilterBar" [@searchFilterBar]>
+        <mat-form-field appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput placeholder="Enter data" />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+  <mat-sidenav #rightSidenav [mode]="rightSidenavMode" [opened]="isRightSideavOpened$ | async" position="end">
+    Right Sidenav
+  </mat-sidenav>
+</mat-sidenav-container>
+
+<ng-template #appToolbarLeft>
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <h1>Angular Starter</h1>
+    <app-button icon="menu" (click)="toggleSidenav(leftSidenav, 'isLeftSidenavOpened')"></app-button>
+  </div>
+</ng-template>
+
+<ng-template #appToolbarMiddle>
+  <input type="text" (click)="toggleSearchFilterBar()" />
+</ng-template>
+
+<ng-template #appToolbarRight>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <ngx-avatar [name]="'Viacheslav Saloid'"></ngx-avatar>
+    <app-button icon="menu" (click)="toggleSidenav(rightSidenav, 'isRightSidenavOpened')"></app-button>
+  </div>
+</ng-template>

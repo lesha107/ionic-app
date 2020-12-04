@@ -1,0 +1,6 @@
+<ng-container [ngTemplateOutlet]="getTemplate()" [ngTemplateOutletContext]="{ $implicit: navigationMenu }">
+</ng-container>
+
+<ng-template #layout1 let-navigationMenu>
+  <app-layout-1 [navigationMenu]="navigationMenu"></app-layout-1>
+</ng-template>
